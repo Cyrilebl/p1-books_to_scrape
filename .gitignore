@@ -1,0 +1,5 @@
+# Env folder
+env/
+
+# All csv files
+*.csv
