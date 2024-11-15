@@ -49,4 +49,4 @@ for category_url in categories_url:
     
     # Final file name for each category
     file_name = f"{category_name}.csv"
-    save_to_csv(file_name, headers, rows)
+    save_to_csv(file_name, headers, rows, "data_category")

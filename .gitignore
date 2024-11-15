@@ -1,5 +1,8 @@
 # Env folder
 env/
 
+# Output data folders
+data/
+
 # All csv files
 *.csv
