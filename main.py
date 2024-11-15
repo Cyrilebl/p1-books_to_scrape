@@ -1,8 +1,8 @@
-from save_to_csv import save_to_csv
-from fetch_data import *
-from product_page_url import control_pagination
-from categories import categories
+from src import *
 import re
+
+PAGE_URL = "https://books.toscrape.com/"
+DATA_FOLDER = "data/data_category"
 
 # File titles
 headers = ["product_page_url",
@@ -17,12 +17,11 @@ headers = ["product_page_url",
             "image_url"]
 
 # Categories urls
-page_url = "https://books.toscrape.com/"
-categories_url = categories(page_url)
+categories_url = categories(PAGE_URL)
 
 # Products urls
 for category_url in categories_url:
-    urls = control_pagination(page_url, category_url, "div", "image_container")
+    urls = control_pagination(PAGE_URL, category_url, "div", "image_container")
 
     # Collect data for each product
     rows = []
@@ -49,4 +48,4 @@ for category_url in categories_url:
     
     # Final file name for each category
     file_name = f"{category_name}.csv"
-    save_to_csv(file_name, headers, rows, "data_category")
+    save_to_csv(file_name, headers, rows, DATA_FOLDER)
