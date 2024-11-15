@@ -1,4 +1,3 @@
-from product_page_url import *
 from bs4 import BeautifulSoup
 import requests
 
