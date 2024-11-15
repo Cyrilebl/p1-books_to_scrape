@@ -34,8 +34,10 @@ def fetch_title(selector):
 
 def fetch_description(selector, attribute):
     element = soup.find(selector, id=attribute)
-    inner_selector = element.find_next_sibling("p")
-    return inner_selector.get_text(strip=True) if element else ""
+    if element:
+        inner_selector = element.find_next("p")
+        return inner_selector.get_text(strip=True) if inner_selector else ""
+    return ""
 
 def fetch_text_from_table(selector, n, inner_selector):
     table = soup.find("table", class_="table")
