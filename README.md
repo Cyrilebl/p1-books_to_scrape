@@ -4,7 +4,9 @@
 
 ### ✨ À propos
 
-Ce projet a été conçu pour fournir un outil automatisé d’analyse des prix des livres disponibles sur le site **Books to Scrape**. Il peut être utilisé pour recueillir des données structurées et des images à des fins d’analyse de marché.
+Ce projet propose un outil automatisé pour analyser les prix des livres disponibles sur le site **Books to Scrape**. Il collecte des données structurées et télécharge les images des livres correspondants à des fins d’analyse de marché.
+
+---
 
 ### 📌 Étape 1 : Cloner le repository
 
@@ -15,6 +17,8 @@ Téléchargez le projet sur votre ordinateur.
 ```bash
 git clone <_repository url_>
 ```
+
+---
 
 ### 📌 Étape 2 : Initialiser un environnement virtuel
 
@@ -39,6 +43,8 @@ source env/bin/activate
 deactivate
 ```
 
+---
+
 ### 📌 Étape 3 : Installer les packages nécessaires
 
 Installez les dépendances listées dans le fichier `requirements.txt`.
@@ -49,6 +55,8 @@ Installez les dépendances listées dans le fichier `requirements.txt`.
 pip install -r requirements.txt
 ```
 
+---
+
 ### 📌 Étape 4 : Exécuter le code
 
 - Dans le terminal, exécutez :
@@ -56,6 +64,8 @@ pip install -r requirements.txt
 ```bash
 python3 main.py
 ```
+
+---
 
 ### 📁 Organisation des données extraites
 
