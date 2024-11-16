@@ -1,6 +1,6 @@
 # Analyse de marché
 
-## Surveillance des prix du site **Books to Scrape**
+## Surveillance des prix du site Books to Scrape
 
 ### ✨ À propos
 
@@ -15,7 +15,7 @@ Téléchargez le projet sur votre ordinateur.
 - Dans le terminal exécutez :
 
 ```bash
-git clone <_repository url_>
+git clone <repository url>
 ```
 
 ---
