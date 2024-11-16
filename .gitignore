@@ -4,5 +4,5 @@ env/
 # Output data folders
 data/
 
-# All csv files
-*.csv
+# Ignore Python bytecode files
+__pycache__/
