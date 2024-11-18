@@ -12,7 +12,6 @@ def download_image(image_name, image_url, folder_path):
     if response.status_code == 200: 
         # Download (Write Binary)
         with open(full_path, 'wb') as file:
-            for chunk in response.iter_content(1024):
-                file.write(chunk)
+            file.write(response.content)
     else:
         return
