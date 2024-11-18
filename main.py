@@ -5,6 +5,7 @@ from src.categories import categories
 from src.download_images import download_image
 import re
 import os
+from concurrent.futures import ThreadPoolExecutor
 
 PAGE_URL = "https://books.toscrape.com/"
 DATA_FOLDER = "data/data_category"
@@ -22,11 +23,7 @@ headers = ["product_page_url",
             "review_rating",
             "image_url"]
 
-# Categories urls
-categories_url = categories(PAGE_URL)
-
-# Products urls
-for category_url in categories_url:
+def process_category(category_url):
     urls = control_pagination(PAGE_URL, category_url, "div", "image_container")
 
     # Collect data for each product
@@ -67,7 +64,16 @@ for category_url in categories_url:
         download_image(image_name, data["image_url"], category_image_folder)
         
     
-            # Final file for each category
-    file_name = f"{category_name}.csv"
-    save_to_csv(file_name, headers, rows, DATA_FOLDER)
+    # Final file for each category
+    save_to_csv(f"{category_name}.csv", headers, rows, DATA_FOLDER)
         
+def main():
+    # Categories urls
+    categories_url = categories(PAGE_URL)
+    
+    # Process the categories in parallel
+    with ThreadPoolExecutor() as executor:
+        executor.map(process_category, categories_url)
+        
+if __name__ == "__main__":
+    main()
