@@ -56,8 +56,7 @@ def process_category(category_url):
         os.makedirs(category_image_folder, exist_ok=True)
         
         # Generate image name
-        image_name = url.split("/")[-2]
-        image_name = re.sub(r"_\d+$", "", image_name) # Regex to remove _ and numbers
+        image_name = data["universal_product_code"]
         image_name= f"{image_name}.jpg"
         
         # Save the image in the corresponding folder
